@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import DiscoverBlock from './DiscoverBlock/components/DiscoverBlock';
 import '../styles/_discover.scss';
+import setAuth from '../../../setAuth'
+let tokenObject = {
+  accessToken: "",
+  tokenType: ""
+}
 
 export default class Discover extends Component {
   constructor() {
     super();
-
     this.state = {
       newReleases: [],
       playlists: [],
       categories: []
     };
+    
   }
+
+    componentDidMount = async () => { 
+      await setAuth().then( result => tokenObject = {...result} )
+    }
 
   render() {
     const { newReleases, playlists, categories } = this.state;
