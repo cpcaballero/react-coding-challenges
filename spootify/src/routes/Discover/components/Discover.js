@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import cx from 'classnames';
 import DiscoverBlock from "./DiscoverBlock/components/DiscoverBlock";
 import "../styles/_discover.scss";
 import config from "../../../config";
