@@ -4,11 +4,6 @@ import "../styles/_discover.scss";
 import config from "../../../config";
 import setAuth from "../../../setAuth";
 
-let tokenObject = {
-  accessToken: "",
-  tokenType: "",
-};
-
 export default class Discover extends Component {
   constructor() {
     super();
@@ -48,17 +43,17 @@ export default class Discover extends Component {
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   componentDidMount = () => {
-    this.fetchData()
+    this.fetchData();
   };
 
   render() {
     const { newReleases, playlists, categories } = this.state;
     return (
       <div className="discover">
-        <DiscoverBlock 
+        <DiscoverBlock
           text="RELEASED THIS WEEK"
           id="released"
           data={newReleases}
